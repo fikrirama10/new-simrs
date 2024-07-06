@@ -1,0 +1,50 @@
+<?php 
+use dosamigos\chartjs\ChartJs;
+$nama = array();
+$laki = array();
+$perempuan = array();
+$total = array();
+foreach($model['pendidikan'] as $a):
+	array_push($nama,$a['nama']);
+	array_push($laki,$a['laki']);
+	array_push($perempuan,$a['perempuan']);
+	array_push($total,$a['total']);
+endforeach;
+?>
+<?= ChartJs::widget([
+    'type' => 'bar',
+    'options' => [
+        'height' => 50,
+        'width' => 200,
+		
+    ],
+	
+    'data' => [
+        'labels' => $nama,
+        'datasets' => [
+            [
+                'label' => "Laki Laki",
+                'backgroundColor' => "rgba(179,181,198,0.2)",
+                'borderColor' => "rgba(179,181,198,1)",
+                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                'pointBorderColor' => "#fff",
+                'pointHoverBackgroundColor' => "#fff",
+                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                'data' => $laki
+            ],
+            [
+                'label' => "Perempuan",
+                'backgroundColor' => "rgba(255,99,132,0.2)",
+                'borderColor' => "rgba(255,99,132,1)",
+                'pointBackgroundColor' => "rgba(255,99,132,1)",
+                'pointBorderColor' => "#fff",
+                'pointHoverBackgroundColor' => "#fff",
+                'pointHoverBorderColor' => "rgba(255,99,132,1)",
+                'data' => $perempuan
+            ]
+        ]
+    ],
+	
+	
+]);
+?>

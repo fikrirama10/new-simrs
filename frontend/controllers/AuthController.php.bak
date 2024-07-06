@@ -1,0 +1,59 @@
+<?php
+namespace frontend\controllers;
+use Yii;
+ 
+class AuthController extends \yii\rest\Controller
+{
+
+	public function actionLogin(){
+		$headers = Yii::$app->request->headers;
+		$username = $headers->get('x-username');
+		$password = $headers->get('x-password');
+		$user = \common\models\User::findByUsername($username);
+		if(!empty($user)){
+		  // check, valid nggak passwordnya, jika valid maka bikin response success
+		  if($user->validatePassword($password)){
+			if($user->status == 10){
+			$response = [
+				'response'=>[
+					'token'=>$user->auth_key
+				],
+				'metadata'=>[
+					'message'=>"Ok",
+					'code'=> 200
+				]
+			  
+			];
+			}else{
+				$response = [
+					'response'=>[
+						'token'=>null,
+					],
+					'metadata'=>[
+						'message'=>"Token Expired",
+						'code'=> 201
+					]
+				];
+			}
+		  }else{
+			  	$response = [
+				'response'=>[
+					'token'=>null,
+				],
+				'metadata'=>[
+					'message'=>"Username / Password Salah",
+					'code'=> 201
+				]
+				];
+		  } 
+	}else{
+		 $response = [
+				'metadata'=>[
+					'message'=>"Username / Password Tidak ditemukan",
+					'code'=> 201
+				]
+			  ];
+		}
+		return $response;
+	}
+}

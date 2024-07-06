@@ -1,0 +1,4 @@
+<?php $form = ActiveForm::begin(); ?>
+	<?= $form->field($operasi, 'diagnosisprabedah')->textArea(['required'=>true,'rows'=>4])->label('Diagnosis Pra Bedah') ?>
+	<?= Html::submitButton('Kirim', ['class' => 'btn btn-success','id'=>'confirm2']) ?>
+<?php ActiveForm::end(); ?>

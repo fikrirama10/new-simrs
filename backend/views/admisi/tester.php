@@ -1,0 +1,3 @@
+
+<?= $tStamp ?><br>
+<?= $encodedSignature ?><br>

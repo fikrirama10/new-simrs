@@ -1,0 +1,31 @@
+body{font-family:arial; font-size:12px; text-transform: uppercase;}
+.barcode img{width:100px;}
+table, td, th {
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	text-transform: uppercase;
+	height:30px;
+	border: 0 px solid black;
+}
+
+table {
+	text-transform: uppercase;
+	width: 100%;
+	border-collapse: collapse;
+}
+.header1{width:100%; border-bottom:1px solid #000;}
+.logo{width:12%;  float:left;}
+.logo img{width:100%; padding-left:5px;}
+.header2{width:50%; margin-left:30px; height:120px; float:left;}
+.headerbr{width:30%; margin-left:30px; height:120px; float:left;}
+.rm{font-family:roboto; font-size:27px;font-weight:bold; letter-spacing: 15px;}
+.datapasien{
+	margin-top:20px;
+	margin-bottom:30px;
+	width:100%;
+	float:left;
+	
+}
+.datapasien table{border-collapse: collapse;  width: 100%;
+    border:1px solid;}

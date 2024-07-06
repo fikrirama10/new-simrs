@@ -1,0 +1,31 @@
+<?php
+	use common\models\ObatTransaksiDetail;
+	use common\models\TransaksiBayar;
+	
+	$bayar = TransaksiBayar::find()->orderBy(['urutan'=>SORT_ASC])->all();
+?>
+<?php foreach($bayar as $b){ ?>
+<h3>Obat / Alkes <?= $b->bayar ?></h3>
+<table class='table table-bordered'>
+	<tr>
+		<th width=10>No</th>
+		<th width=200>Obat / Alkes (Merk)</th>
+		<th>Penanggung</th>
+		<th>Jumlah</th>
+		<th>Harga</th>
+		<th>Total</th>
+	</tr>
+	<?php
+	$detail = ObatTransaksiDetail::find()->where(['idtrx'=>$pl->id])->andwhere(['idbayar'=>$b->id])->all();
+	$no=1; foreach($detail as $d){ ?>
+	<tr>
+		<td><?= $no++ ?></td>
+		<td><?= $d->obat->nama_obat ?> (<?= $d->bacth->merk ?>)</td>
+		<td><?= $d->idbayar?> </td>
+		<td><?= $d->qty ?> </td>
+		<td><?= $d->harga ?> </td>
+		<td><?= $d->total ?> </td>
+	</tr>
+	<?php }  ?>
+</table>
+<?php } ?>

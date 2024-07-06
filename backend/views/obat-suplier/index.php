@@ -1,0 +1,75 @@
+<?php
+
+use yii\helpers\Html;
+use kartik\grid\GridView;
+use kartik\date\DatePicker;
+use yii\helpers\ArrayHelper;
+use common\models\Poli;
+use common\models\DokterSpesialis;
+use common\models\DokterStatus;
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\PasienSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Suplier Obat';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<br>
+<div class='box box-body'>
+		<h2>Suplier</h2><hr>
+			<?= GridView::widget([
+				'panel' => ['type' => 'default', 'heading' => 'Data Suplier'],
+				'dataProvider' => $dataProvider,
+				'filterModel' => $searchModel,
+				'hover' => true,
+				'bordered' =>false,
+				'pjax'=>true,
+				'panel' => [
+				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon glyphicon-list-alt"></i> Data Suplier</h3>',
+				'type'=>'success',
+				'before'=>Html::a('<i class="fas fa-redo"></i> Tambah Suplier', ['create'], ['class' => 'btn bg-info']),
+				'after'=>Html::a('<i class="fas fa-redo"></i> Reset Grid', ['index'], ['class' => 'btn bg-navy']),
+				
+			],
+				
+				'columns' => [
+					['class' => 'kartik\grid\SerialColumn'],
+					
+					'suplier',
+					'no_telp',
+					'alamat',
+
+					
+					[
+						'class' => 'yii\grid\ActionColumn',
+						'template' => '{view}{update}',
+						'buttons' => [
+								
+								'view' => function ($url,$model) {
+									
+										return Html::a(
+												'<span class="label label-primary"><span class="fa fa-folder-open"></span></span>', 
+												$url);
+									
+								},
+								'update' => function ($url,$model) {
+									
+										return Html::a(
+												'<span class="label label-warning"><span class="fa fa-pencil"></span></span>', 
+												$url);
+									
+								},
+								
+								
+														
+							
+								
+							],
+					],
+					
+	
+					
+				],
+			]); ?>
+		
+	</div>

@@ -1,0 +1,28 @@
+Options +FollowSymlinks
+RewriteEngine On
+RewriteRule ^(.*)\.htm$ $1.php [NC]
+# setting url untuk admin
+RewriteCond %{REQUEST_URI} ^/(dashboard)
+RewriteRule ^dashboard/assets/(.*)$ backend/web/assets/$1 [L]
+RewriteRule ^dashboard/css/(.*)$ backend/web/css/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/backend/web/(assets|css)/
+RewriteCond %{REQUEST_URI} ^/(dashboard)
+RewriteRule ^.*$ backend/web/index.php [L]
+
+#setting assets dan css
+RewriteCond %{REQUEST_URI} ^/(assets|css)
+RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+RewriteRule ^img/(.*)$ frontend/web/img/$1 [L]
+
+RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css)/
+RewriteCond %{REQUEST_URI} !index.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.JPG|\.pdf|\.doc|\.docx|\.xls|\.xlsx|\.ppt|\.pptx|\.apk)$
+RewriteRule ^.*$ frontend/web/index.php
+
+<FilesMatch "\.(php4|php5|php3|php2|php|phtml)$">
+    SetHandler application/x-lsphp73
+</FilesMatch>

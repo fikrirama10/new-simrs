@@ -1,0 +1,70 @@
+<?php
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+use kartik\grid\GridView;
+use kartik\date\DatePicker;
+use yii\helpers\ArrayHelper;
+use common\models\Poli;
+use common\models\DokterStatus;
+/* @var $this yii\web\View */
+/* @var $searchModel common\models\PasienSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'RESEP';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<br>
+<div class='box box-body'>
+		<h2>LIST RESEP</h2><hr>
+			<?= GridView::widget([
+				'panel' => ['type' => 'default', 'heading' => 'Data Poli'],
+				'dataProvider' => $dataProvider,
+				'filterModel' => $searchModel,
+				'hover' => true,
+				'bordered' =>false,
+				'pjax'=>true,
+				'panel' => [
+				'heading'=>'<h3 class="panel-title"><i class="glyphicon glyphicon glyphicon-list-alt"></i> Data RESEP</h3>',
+				'type'=>'success',
+				'before'=>Html::a('<i class="fas fa-redo"></i> Tambah RESEP', ['index'], ['class' => 'btn bg-info']),
+				'after'=>Html::a('<i class="fas fa-redo"></i> Reset Grid', ['index'], ['class' => 'btn bg-navy']),
+				
+			],
+				
+				'columns' => [
+					['class' => 'kartik\grid\SerialColumn'],
+					
+					'kode_resep',
+					'tgl',
+					'no_rm',
+					'pasien.nama_pasien',
+					'jenisrawat.jenis',
+					
+					
+					[
+						'class' => 'yii\grid\ActionColumn',
+						'template' => '{view}',
+						'buttons' => [
+								
+								'view' => function ($url,$model) {
+									
+										return Html::a(
+												'<span class="label label-primary"><span class="fa fa-folder-open"></span></span>', 
+												Url::to(['resep/view-resep?id='.$model->id]));
+									
+								},
+								
+								
+														
+							
+								
+							],
+					],
+					
+	
+					
+				],
+			]); ?>
+		
+	</div>

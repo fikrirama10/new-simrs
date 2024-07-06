@@ -1,0 +1,21 @@
+<?php
+return [
+    'adminEmail' => 'admin@example.com',
+    'supportEmail' => 'support@example.com',
+    'senderEmail' => 'noreply@example.com',
+    'senderName' => 'Example.com mailer',
+    'user.passwordResetTokenExpire' => 3600,
+    'user.passwordMinLength' => 8,
+    'consId' => '29855',
+    'secretKey' => '3rU307868B',
+     'baseUrl' => 'https://new-simrs.rsausulaiman.com/',
+     'baseUrl2' => 'https://new-simrs.rsausulaiman.com/',
+    'baseUrlaplicares' => 'https://new-api.bpjs-kesehatan.go.id/aplicaresws/rest',
+    'baseUrlDev' => 'https://apijkn-dev.bpjs-kesehatan.go.id/vclaim-rest-dev',
+    'baseUrlBpjs' => 'https://apijkn.bpjs-kesehatan.go.id/vclaim-rest/',
+    'baseUrlVclaim' => 'https://apijkn.bpjs-kesehatan.go.id/vclaim-rest',
+    'baseUrlAntrol' => 'https://apijkn.bpjs-kesehatan.go.id/antreanrs',
+	'imagePath' => Yii::getAlias('@frontend').'/images',
+	'documentPath' => Yii::getAlias('@frontend').'/dokumen',
+	'bsDependencyEnabled' => false, 
+];

@@ -1,0 +1,49 @@
+.header1{width:100%; border-bottom:1px solid #000;}
+.logo{width:12%; padding-top:5px; padding-left:;  float:left;}
+.logo img{width:100%;}
+.header2{width:88%; text-indent:5px; padding-top:5px; float:left;}
+.headerbr{width:30%; margin-left:30px; height:120px; float:left;}
+.nama1{width:15%; float:left; font-size:7px; }
+.nama2{width:18%; line-height:10px; float:left; font-size:7px; }
+.nama22{width:30%; line-height:10px; float:left; font-size:7px; }
+.nama{width:35%; float:left; font-size:7px; }
+.namaa{width:45%; float:left; font-size:7px; }
+.norm{width:25%; float:left; font-size:7px; }
+.namaobat{width:82%; float:left; font-size:9px; }
+.identitas{margin-top:-5px;}
+.obat{margin-top:5px; width:100%;}
+.nobat{ margin-top:-5px;width:100%;}
+html,body {height: 100%;font-size:10px;background-color:#fff;font-family:Tahoma}
+/* override typography */
+h1{font-size:24px;}
+h2{font-size:22px;}
+h3{font-size:16px; text-decoration: none;}
+h4{font-size:14px;}
+.h4{font-size:14px;}
+h5{font-size:12px; font-weight:none;}
+.h6{font-size:8px; font-weight:bold;}
+.h7{font-size:7px; }
+hr{
+ margin-top:0px;
+}
+
+.center{text-align:center;}
+.olab{width:100%; margin-bottom:20px;}
+.olab th {
+    text-align: center;
+	font-size:10px;
+border:1px solid;
+	 height:20px;
+	  line-height:10px;
+}
+.olab td {
+	font-size:10px;
+	text-indent:10px;
+	border:1px solid;
+	 padding:3px;
+}
+.olab table {
+    width: 100%;
+    border-bottom:1px solid;
+    border-collapse: collapse;
+}

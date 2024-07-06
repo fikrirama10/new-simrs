@@ -1,0 +1,33 @@
+
+.header{
+	width:100%;
+	border-bottom:3px solid;
+	padding-bottom:10px;
+	text-transform:uppercase;
+}
+.header-logo{
+	width:15%;
+	float:left;
+}
+.header-logo img{width:100%;}
+.header-kop{ padding-top:15px; width:70%; float:left; text-align:center;  font-size:15px;}
+
+.header2{
+	width:100%;
+	text-align:center;
+	padding-top:20px;
+	font-size:15px;
+}
+.datapasien{
+	margin-top:20px;
+	margin-bottom:30px;
+	width:100%;
+	float:left;
+	font-size:13px;
+}
+.tandatangan{
+	margin-top:20px;
+	width:40%;
+	float:right;
+	text-align:center;
+}

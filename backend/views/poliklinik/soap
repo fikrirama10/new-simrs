@@ -1,0 +1,56 @@
+<div class='col-md-4'>
+			<div class='box box-body'>
+				<table class='table'>
+					<tr>
+						<th colspan=2>Tindakan</th>
+					</tr>
+					<?php foreach($soaptindakanlist as $st){ ?>
+					<tr>
+						<td>- <?= $st->tindakan->nama_tindakan ?></td>
+						<?php if(Yii::$app->user->identity->userdetail->dokter == 1){ ?>
+						<td><a class="btn btn-danger btn-xs"><i class="fa  fa-trash-o"></i></a></td>
+						<?php } ?>
+					</tr>
+					<?php } ?>
+				</table>
+			</div>
+		</div>
+		<div class='col-md-4'>
+			<div class='box box-body'>
+				<table class='table'>
+					<tr>
+						<th colspan=2>Radiologi</th>
+					</tr>
+					<?php foreach($soapradiologilist as $sr){ ?>
+					<tr>
+						<td>- <?= $sr->tindakan->nama_tindakan ?></td>
+						<?php if(Yii::$app->user->identity->userdetail->dokter == 1){ ?>
+						<td>
+							<?php if($sr->status == 1){ ?>
+							<a class="btn btn-danger btn-xs"><i class="fa  fa-trash-o"></i></a>
+							<?php }else{ ?>
+							<a class='btn btn-info btn-xs'><i class="fa  fa-eye"></i></a>
+							<?php } ?>
+						</td>
+						<?php } ?>
+					</tr>
+					<?php } ?>
+				</table>
+			</div>
+		</div>
+		<div class='col-md-4'>
+			<div class='box box-body'>
+				<table class='table'>
+					<tr>
+						<th colspan=2>Laboratorium</th>
+					</tr>
+					<?php foreach($soaplablist as $sl){ ?>
+					<tr>
+						<td>- <?= $sl->pemeriksaan->nama_pemeriksaan ?></td>
+						<?php if(Yii::$app->user->identity->userdetail->dokter == 1){ ?>
+						<td><a class="btn btn-danger btn-xs"><i class="fa  fa-trash-o"></i></a></td>
+						<?php } ?>
+					</tr>
+					<?php } ?>
+				</table>
+			</div>

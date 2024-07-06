@@ -1,0 +1,37 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+/* @var $this yii\web\View */
+/* @var $model common\models\AmprahGudangatk */
+/* @var $form yii\widgets\ActiveForm */
+?>
+
+<div class="amprah-gudangatk-form">
+
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'idamprah')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'idpermintaan')->textInput() ?>
+
+    <?= $form->field($model, 'tgl_permintaan')->textInput() ?>
+
+    <?= $form->field($model, 'tgl_penyerahan')->textInput() ?>
+
+    <?= $form->field($model, 'idasal')->textInput() ?>
+
+    <?= $form->field($model, 'idpeminta')->textInput() ?>
+
+    <?= $form->field($model, 'status')->textInput() ?>
+
+    <?= $form->field($model, 'keterangan')->textarea(['rows' => 6]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
+
+</div>

@@ -1,0 +1,16 @@
+body{ font-size:11px;}
+.img-rujukan{width:90%; }
+.img-logo{width:20%; margin:auto;}
+.sep_paddingtop20{padding-top:20px;}
+.sep_margintop20{margin-top:20px;}
+.header-sep{width:100%; font-family:sans-serif; float:left; border-bottom:1px solid; padding-bottom:10px;}
+.header-sep-rujukan{width:100%; font-family:sans-serif; float:left; border-bottom:1px solid; margin-bottom:5px; padding-bottom:10px;}
+.header-sep-logo{width:30%; float:left; }
+.header-sep-judul{width:30%; font-size:12px; margin-left:15px; padding-top:10px; float:left; }
+.header-sep-nomer{width:26%; font-size:14px; margin-left:15px; padding-top:10px; float:right; }
+.body-sep{width:100%;  font-family:sans-serif; float:left; border:0px solid;}
+.tglcetak{width:70%; float:left; font-size:9px; padding-top:50px;}
+.ttd{width:30%; float:right; }
+.ttdpasien{width:19%; float:right; }
+.catatan{width:70%; float:left; font-size:9px;}
+table{margin-top:10px; margin-bottom:5px;  font-size:10px; font-family:sans-serif;}

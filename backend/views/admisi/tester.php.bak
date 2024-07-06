@@ -1,0 +1,3 @@
+<?= $response['peserta']['noKartu'] ?><br>
+<?= $response['peserta']['nik'] ?><br>
+<?= $response['peserta']['nama'] ?><br>

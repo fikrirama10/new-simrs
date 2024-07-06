@@ -1,0 +1,72 @@
+<?php 
+use yii\helpers\Html;
+use common\models\PasienAlamat;
+use common\models\SettingSimrs;
+use common\models\ObatTransaksi;
+use common\models\ObatTransaksiDetail;
+use Picqer\Barcode\BarcodeGeneratorHTML;
+$setting= SettingSimrs::find()->all();
+?>
+<?php foreach($setting as $s): ?>
+<div class='header2'><div class='h2'> LABORATORIUM RSAU dr.SISWANTO</div> <div class='h3'><i><?= $s->alamat_rs?></i></div> <div class='h5'><i>Telepon <?= $s->no_tlp?></i></div></div>
+<?php endforeach; ?>
+<div class="datapasien">
+	<table style='font-size:10px;'>
+		<tr>
+			<td width=100px>Nama Pasien</td>
+			<td>:</td>
+			<td width=100px><?= $pasien->nama_pasien ?></td>
+			
+			<td>Id Lab</td>
+			<td>:</td>
+			<td><?= $hasil->labid	?></td>
+		</tr>
+		<tr>
+			<td>Tgl Lahir</td>
+			<td>:</td>
+			<td width=100px><?= $pasien->tgllahir ?></td>
+			
+			<td>Tgl</td>
+			<td>:</td>
+			<td><?= $hasil->tgl_hasil ?></td>
+		</tr>
+		
+		<tr>
+			<td>No RM</td>
+			<td>:</td>
+			<td width=180px><?= $pasien->no_rm ?></td>
+			
+			<td width=100px>Jenis Pasien</td>
+			<td>:</td>
+			<td><?= $hasil->rawat->bayar->bayar ?></td>
+			
+		</tr>
+		
+		
+	</table>
+</div>
+<?php $total=0; foreach($model as $m){
+	$total += $m->pemeriksaan->tarif->tarif;	
+} ?>
+<div class='olab'>
+	<table>
+		<tr>
+			<td style='border-top:1px solid; font-size:9px;background:#ececec; border-bottom:1px solid; text-transform:uppercase;' colspan=4><b>Deskripsi</b></td>
+			<td align=right style='background:#ececec; border-bottom:1px solid; border-top:1px solid; font-size:9px; text-transform:uppercase;' colspan=2><b>TOTAL</b></td>
+		</tr>
+		<tr>
+			<td style='text-transform:uppercase;' colspan=4><b>layanan laboratorium</b></td>
+			<td align=right  style='text-transform:uppercase; font-size:11px; ' colspan=2><b> <?= Yii::$app->algo->IndoCurr($total)?></b></td>
+		</tr>
+		<?php foreach($model as $m){ ?>
+		<tr>
+			<td><?= $m->pemeriksaan->nama_pemeriksaan ?> (<?= $m->bayar->bayar ?>)</td>
+			<td></td>
+			<td>:</td>
+			<td><?= Yii::$app->algo->IndoCurr($m->pemeriksaan->tarif->tarif )?></td>
+		</tr>
+		<?php } ?>
+		
+	
+	</table>
+</div>

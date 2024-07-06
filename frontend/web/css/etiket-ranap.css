@@ -1,0 +1,8 @@
+html,body {height: 100%;font-size:10px;background-color:#fff;font-family:Tahoma}
+.olab{width:100%;}
+.olab th, td {
+  border-bottom: 1px solid #ddd;
+}
+.olab table {
+    width: 100%;
+}

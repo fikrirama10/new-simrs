@@ -1,0 +1,36 @@
+<?php
+return [
+    'components' => [
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=u5053707_new_simrs',
+            'username' => 'u5053707_new_simrs2022',
+            'password' => 'Rsau@2022',
+            'charset' => 'utf8',
+        ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'viewPath' => '@common/mail',
+            'useFileTransport' => true,
+        ],
+    ],
+];
+
+
+// return [
+    // 'components' => [
+        // 'db' => [
+            // 'class' => 'yii\db\Connection',
+            // 'dsn' => 'mysql:host=217.21.72.44;dbname=u1709785_simrs_solo',
+        
+            // 'username' => 'u1709785_simrs_solo_2022',
+            // 'password' => 'Rsaudrsiswanto2022',
+            // 'charset' => 'utf8',
+        // ],
+        // 'mailer' => [
+            // 'class' => 'yii\swiftmailer\Mailer',
+            // 'viewPath' => '@common/mail',
+            // 'useFileTransport' => true,
+        // ],
+    // ],
+// ];

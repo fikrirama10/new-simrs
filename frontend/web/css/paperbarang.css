@@ -1,0 +1,76 @@
+body{font-family:arial; text-transform:; font-size:10;}
+.barcode img{width:100px;}
+table, td, th {
+	padding-left:5px;
+	padding-right:5px;
+	text-transform: uppercase;
+	height:20px;
+	border: 1px solid black;
+}
+.header{
+	width:100%;
+	float:left;
+	text-align:center;
+	margin-bottom:15px;
+
+}
+.upper{
+		text-transform: uppercase;
+}
+.header-satu{
+	text-align:center;
+	width:13%;
+	float:left;
+	border-bottom:1px solid;
+}
+.header2{
+	text-align:justify;
+	width:30%;
+	float:right;
+	border-bottom:1px solid;
+}
+.header3{
+	text-align:center;
+	width:50%;
+	float:right;
+}
+table {
+	text-transform: uppercase;
+	width: 100%;
+	border-collapse: collapse;
+}
+.header1{width:100%; border-bottom:1px solid #000;}
+.logo{width:12%;  float:left;}
+.logo img{width:100%; padding-left:5px;}
+.header2{width:60%; margin-left:30px; height:120px; float:left;}
+.headerbr{width:20%; margin-left:30px; height:120px; float:left;}
+.rm{font-family:roboto; font-size:27px;font-weight:bold; letter-spacing: 15px;}
+.datapasien{
+	margin-top:20px;
+	margin-bottom:30px;
+	width:100%;
+	float:left;
+	
+}
+.datapasien table{border-collapse: collapse;  width: 100%;
+    border:1px solid;}
+
+.olab{width:100%; margin-bottom:20px;}
+.olab th {
+    text-align: center;
+	font-size:12px;
+	 border:1px solid;
+	 height:20px;
+	  line-height:10px;
+}
+.olab td {
+	font-size:14px;
+	text-indent:20px;
+	 border-right:1px solid #000;
+	 padding:7px;
+}
+.olab table {
+    width: 100%;
+    border:1px solid;
+    border-collapse: collapse;
+}
